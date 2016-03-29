@@ -9,38 +9,45 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // serve static files from public folder
 app.use(express.static(__dirname + '/public'));
 
-// set view engine to hbs (handlebars)
-app.set('view engine', 'hbs');
+/************
+ * DATABASE *
+ ************/
 
-
-// pre-seeded todo data; our "database" is an array for now
+// our database is an array for now with some hardcoded values
 var todos = [
   { _id: 1, task: 'Laundry', description: 'Wash clothes' },
   { _id: 2, task: 'Grocery Shopping', description: 'Buy dinner for this week' },
   { _id: 3, task: 'Homework', description: 'Make this app super awesome!' }
 ];
 
+/**********
+ * ROUTES *
+ **********/
 
-// HOMEPAGE ROUTE
+/*
+ * HTML Endpoints
+ */
 
-app.get('/', function (req, res) {
-  res.render('index');
+app.get('/', function homepage(req, res) {
+  res.sendFile(__dirname + '/views/index.html');
 });
 
 
-// API ROUTES
+/*
+ * JSON API Endpoints
+ */
 
 // get all todos
-app.get('/api/todos', function (req, res) {
+app.get('/api/todos', function index(req, res) {
   // send all todos as JSON response
   res.json({ todos: todos });
 });
 
 // create new todo
-app.post('/api/todos', function (req, res) {
+app.post('/api/todos', function create(req, res) {
   // create new todo with form data (`req.body`)
   var newTodo = req.body;
-  
+
   // set sequential id (last id in `todos` array + 1)
   if (todos.length > 0) {
     newTodo._id = todos[todos.length - 1]._id + 1;
@@ -56,7 +63,7 @@ app.post('/api/todos', function (req, res) {
 });
 
 // get one todo
-app.get('/api/todos/:id', function (req, res) {
+app.get('/api/todos/:id', function show(req, res) {
   // get todo id from url params (`req.params`)
   var todoId = parseInt(req.params.id);
 
@@ -70,7 +77,7 @@ app.get('/api/todos/:id', function (req, res) {
 });
 
 // update todo
-app.put('/api/todos/:id', function (req, res) {
+app.put('/api/todos/:id', function update(req, res) {
   // get todo id from url params (`req.params`)
   var todoId = parseInt(req.params.id);
 
@@ -90,7 +97,7 @@ app.put('/api/todos/:id', function (req, res) {
 });
 
 // delete todo
-app.delete('/api/todos/:id', function (req, res) {
+app.delete('/api/todos/:id', function destroy(req, res) {
   // get todo id from url params (`req.params`)
   var todoId = parseInt(req.params.id);
 
@@ -98,16 +105,21 @@ app.delete('/api/todos/:id', function (req, res) {
   var todoToDelete = todos.filter(function (todo) {
     return todo._id == todoId;
   })[0];
-  
+
   // remove todo from `todos` array
   todos.splice(todos.indexOf(todoToDelete), 1);
-  
+
   // send back deleted todo
   res.json(todoToDelete);
 });
 
 
+
+/**********
+ * SERVER *
+ **********/
+
 // listen on port 3000
 app.listen(3000, function() {
-  console.log('server started');
+  console.log('Server running on http://localhost:3000');
 });
