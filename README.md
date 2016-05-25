@@ -1,4 +1,10 @@
-# <img src="https://cloud.githubusercontent.com/assets/7833470/10899314/63829980-8188-11e5-8cdd-4ded5bcb6e36.png" height="60"> Todo App - Test Driven RESTful JSON API
+<!--
+Market: SF
+-->
+
+![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
+
+# Todo App - Test Driven RESTful JSON API
 
 By the end of the challenges, **you should have** a JSON API with a full set of RESTful routes:
 
@@ -109,5 +115,15 @@ Take a look at `server.js` and see if you can figure it out!
 
 ## Submission
 
-* As you make code changes, commit frequently and push to GitHub.
-* Submit this lab as a pull request from your fork to the original repo.
+* As you make code changes, commit frequently and push to your fork on GitHub.
+
+### Self Evaluation
+
+During the previous exercise, rate your progress on a scale of 1-5 (5 being the highest) for the following criteria:
+
+- **Persistence:** Do you handle frustration well? Do you independently pursue understanding?
+- **Organization:** Do you thoughtfully implement best coding patterns and practices?
+- **Collaboration:** Do you make an effort solve problems and share your ideas with others?
+- **Communication:** Do you clearly convey your thoughts to others in illustrative and clear ways?
+- **Self-compassion:** Do you make productive use of turning failures into learning opportunities?
+- **Resourcefulness:** Do make an effort to compare and contrast new ideas with ones you already know?
