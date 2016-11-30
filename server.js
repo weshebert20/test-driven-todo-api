@@ -101,6 +101,8 @@ app.delete('/api/todos/:id', function destroy(req, res) {
   // get todo id from url params (`req.params`)
   var todoId = parseInt(req.params.id);
 
+  console.log("We are now deleting a specific todo by todo ID");
+
   // find todo to delete by its id
   var todoToDelete = todos.filter(function (todo) {
     return todo._id == todoId;
@@ -121,5 +123,5 @@ app.delete('/api/todos/:id', function destroy(req, res) {
 
 // listen on port 3000
 app.listen(3000, function() {
-  console.log('Server running on http://localhost:3000');
+  console.log('Server is running around http://localhost:3000');
 });
