@@ -3,8 +3,9 @@ var express = require('express'),
     app = express(),
     bodyParser = require('body-parser');
 
-// configure bodyParser (for receiving form data)
+// configure bodyParser (for receiving form and JSON data)
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // serve static files from public folder
 app.use(express.static(__dirname + '/public'));
