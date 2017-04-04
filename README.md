@@ -26,9 +26,17 @@ By the end of the challenges, **you should have** a JSON API with a full set of 
 ## Test Driven Development (TDD)
 For this challenge, we'll be testing our JSON API using a testing framework called [Mocha](http://mochajs.org/) and assertion library called [Chai](http://chaijs.com/).
 
-The tests have already been written for us! Our goal is to try to understand the **test output** so that we can write _server-side code_ that will make the *red* (failing) tests turn *green* (passing).
+**Chai** is an **assertion library** - it consists of tests that verify whether things in your code work as expected or not.
 
-The tests will help guide our development process, and keep us focused on our end goal: a RESTful, full-CRUD, JSON API.
+**Mocha** is a **testing framework** - it provides a space to run your Chai tests.
+
+>You might remember these terms from our [Iterartors Lab](https://github.com/den-materials/js-building-iterators-lab).
+
+## How To Get Started
+
+The tests have already been written for us! Our goal is to try to understand what the tests are telling us, so that we can write _server-side code_ that will make the *red* (failing) tests turn *green* (passing).
+
+These tests will help guide our development process, and keep us focused on our end goal: a RESTful, full-CRUD, JSON API.
 
 #### Test Setup
 From inside your cloned directory, run:
